@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "blogs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "Frontend",
+        "Backend",
+        "Database"
+      ],
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "maxLength": 255,
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "auth": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::auth.auth",
+      "inversedBy": "blog"
+    },
+    "content": {
+      "type": "customField",
+      "required": true,
+      "options": {
+        "preset": "default"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}
