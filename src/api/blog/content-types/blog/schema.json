@@ -50,12 +50,8 @@
       "inversedBy": "blog"
     },
     "content": {
-      "type": "customField",
-      "required": true,
-      "options": {
-        "preset": "default"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
+      "type": "blocks",
+      "required": true
     }
   }
 }
