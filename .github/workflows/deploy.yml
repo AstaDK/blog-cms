@@ -32,12 +32,12 @@ jobs:
           debug: true
           script: |
             echo "Deploying to server"
-            if [ ! -d "/astalife/blog-cms" ]; then
-              git clone git@github.com-asta:AstaDK/blog-cms.git /astalife/blog-cms
+            if [ ! -d "blog-cms" ]; then
+              git clone git@github.com-asta:AstaDK/blog-cms.git
             else
-              cd /astalife/blog-cms
+              cd blog-cms
               git pull origin main
             fi
-            cd /astalife/blog-cms
+            cd blog-cms
             sudo docker compose -f docker-compose.prod.yml down
             sudo docker compose -f docker-compose.prod.yml up -d --build
