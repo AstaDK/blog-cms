@@ -2,8 +2,9 @@ version: "3"
 services:
   astaCMS:
     container_name: astaCMS-prod
-    build: .
-    dockerfile: Dockerfile.prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
     image: strapi:latest
     restart: unless-stopped
     env_file: .env
@@ -30,7 +31,7 @@ services:
     networks:
       - asta-cms
     depends_on:
-      - astaCMSDB-prod
+      - astaCMSDB
 
   astaCMSDB:
     container_name: astaCMSDB-prod
