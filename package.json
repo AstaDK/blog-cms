@@ -2,7 +2,7 @@
   "name": "blog-cms",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "A CMS server",
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
@@ -12,11 +12,10 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^4.0.11",
-    "@strapi/plugin-cloud": "5.3.0",
-    "@strapi/plugin-users-permissions": "5.3.0",
+    "@strapi/plugin-cloud": "5.4.1",
+    "@strapi/plugin-users-permissions": "5.4.1",
     "@strapi/provider-upload-cloudinary": "^5.4.0",
-    "@strapi/strapi": "5.3.0",
-    "better-sqlite3": "11.3.0",
+    "@strapi/strapi": "5.4.1",
     "pg": "^8.13.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

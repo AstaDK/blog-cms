@@ -16,15 +16,6 @@
       "type": "string",
       "required": true
     },
-    "categories": {
-      "type": "enumeration",
-      "enum": [
-        "Frontend",
-        "Backend",
-        "Database"
-      ],
-      "required": true
-    },
     "summary": {
       "type": "text",
       "maxLength": 255,
@@ -52,6 +43,12 @@
     "content": {
       "type": "blocks",
       "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categorie.categorie",
+      "inversedBy": "blogs"
     }
   }
 }
