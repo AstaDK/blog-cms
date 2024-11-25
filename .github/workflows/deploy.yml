@@ -33,9 +33,11 @@ jobs:
           script: |
             echo "Deploying to server"
             if [ ! -d "/astalife/blog-cms" ]; then
-              git clone git@github.com-asta:AstaDK/blog-cms.git /astalife
+              git clone git@github.com-asta:AstaDK/blog-cms.git /astalife/blog-cms
+            else
+              cd /astalife/blog-cms
+              git pull origin main
             fi
             cd /astalife/blog-cms
-            git pull origin main
-            docker compose down
-            docker compose -f docker-compose.prod.yml up -d --build
+            docker-compose down
+            docker-compose -f docker-compose.prod.yml up -d --build
