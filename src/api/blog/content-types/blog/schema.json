@@ -19,13 +19,15 @@
     "summary": {
       "type": "text",
       "maxLength": 255,
-      "required": true
+      "required": false
     },
     "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "slug": {
       "type": "string",
